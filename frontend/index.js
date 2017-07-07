@@ -3,7 +3,8 @@ var fs = require("fs");
 var express = require("express");
 var bodyparser = require("body-parser");
 var yotisdk = require("yoti-node-sdk");
-const env 		 = require('env2')('./env.json')
+const request = require('request');
+const env 		 = require('env2')('./env.json');
 
 var app = express()
 
@@ -38,6 +39,15 @@ app.get("/login", function(req, res) {
 
 app.get("/send", function(req, res){
   res.render('send')
+})
+
+app.get("/userlist", function(req, res){
+      request({
+      uri: 'http://kkmonlee.com/africa/get_user_lists.php?american=447767797808',
+    }).on('response', function(response) {
+    console.log(response) // 200
+    // console.log(response.headers['content-type']) // 'image/png'
+  })
 })
 
 app.get('/recieve', function(req, res){
