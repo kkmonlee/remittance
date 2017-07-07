@@ -2,7 +2,9 @@ body {
 	background-color: #18BC9C;
 	color: white;
 }
-
+.about{
+	text-align: center;
+}
 .three-images {
 	width: 5vw;
 }

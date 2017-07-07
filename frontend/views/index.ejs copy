@@ -15,14 +15,9 @@
                     <div class="intro-text">
                         <h1 class="name">Remitshop</h1>
                         <hr class="star-light">
-                        <span class="skills">Send the goods your family needs. No wait times.</span>
+                        <span class="skills">Send the goods your family needs. Today</span>
                     </div>
-                    <h2> Sign up to our mailing list for early access to our system </h2>
-                    <form action="https://formspree.io/rachblondon@gmail.com"
-                        method="POST">
-                        <input class="form-control" type="email" name="_replyto">
-                        <input class="btn btn-lg btn-outline"type="submit" value="Send">
-                    </form>
+                    <% include partials/index/button-group.ejs %>
 
                 </div>
             </div>
@@ -38,15 +33,23 @@
                     <hr class="star-light">
                 </div>
             </div>
-            <div class="row about">
+            <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Send the goods your family needs today. Login and and view their wishlist, choose what you want to buy and its sent immediately. No waiting around for clearance checks, your goods are dispensed right away! </p>
+                    <p>Send the goods your family needs today. Login and and view your their wishlist, choose what you want to buy and its sent straight away. No waiting around for clearance checks, your goods are dispensed right away! </p>
                 </div>
                 <div class="col-lg-4">
                     <p>Faster and more useful than sending cash.</p>
+                    <p> Send your family what they need today </p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-        
+                     <div class="button-group">
+                        <a href="#" class="btn-send btn btn-lg btn-outline">
+                            Send
+                        </a>
+                        <a href="#" class="btn-recieve btn btn-lg btn-outline">
+                            Recieve
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,9 +64,10 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <p>All over the world </p>
+                        <p>3481 Melrose Place
+                            <br>Beverly Hills, CA 90210</p>
                     </div>
-                    <!--<div class="footer-col col-md-4">
+                    <div class="footer-col col-md-4">
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
@@ -82,7 +86,7 @@
                                 <a href="#" class="btn-social btn-outline"><span class="sr-only">Dribble</span><i class="fa fa-fw fa-dribbble"></i></a>
                             </li>
                         </ul>
-                    </div>-->
+                    </div>
                 </div>
             </div>
         </div>

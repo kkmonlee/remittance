@@ -4,7 +4,7 @@ var express = require("express");
 var bodyparser = require("body-parser");
 var yotisdk = require("yoti-node-sdk");
 const request = require('request');
-const env 		 = require('env2')('./env.json');
+// const env 		 = require('env2')('./env.json');
 
 var app = express()
 
@@ -12,8 +12,8 @@ var app = express()
 var sdkid = process.env.YOTI_CLIENT_SDK_ID;
 var appid = process.env.APPLICATION_ID;
 
-var keyfilepath = fs.readFileSync(__dirname + '/keys/key.pem');
-var yotiClient = new yotisdk(sdkid, keyfilepath);
+// var keyfilepath = fs.readFileSync(__dirname + '/keys/key.pem');
+// var yotiClient = new yotisdk(sdkid, keyfilepath);
 
 // App config
 app.set('views', __dirname + '/views');
