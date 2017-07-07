@@ -36,6 +36,14 @@ app.get("/login", function(req, res) {
   });
 })
 
+app.get("/send", function(req, res){
+  res.render('send')
+})
+
+app.get('/recieve', function(req, res){
+  res.render('recieve')
+})
+
 app.get("/profile", function(req, res) {
   var token = req.query.token;
   if (!token) {
