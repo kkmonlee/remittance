@@ -1,5 +1,30 @@
+body {
+	background-color: #18BC9C;
+	color: white;
+}
+
+.send {
+	padding: 20vh 10vh;
+	text-align: center
+}
+
 .remit-shop-logo {
-	max-width: 20vw;
+	max-width: 10vw;
+	display: inline;
+}
+
+.remit-shop-header {
+	max-width: 5vw;
+	display: inline;
+	float: left;
+    padding: 10px;
+}
+
+.remit-shop-world {
+	margin-top: 10px;
+    padding: 6px;
+	max-width: 10vw;
+	display: inline;
 }
 
 .button-group a {
