@@ -1,4 +1,4 @@
-var https = require("https");
+var http = require("http");
 var fs = require("fs");
 var express = require("express");
 var bodyparser = require("body-parser");
@@ -31,11 +31,7 @@ app.get('/', function(req, res){
   })
 })
 // APP ROUTES
-app.get("/login", function(req, res) {
-  res.render('login', {
-    appid: appid
-  });
-})
+
 
 app.get("/send", function(req, res){
   res.render('send')
@@ -94,12 +90,9 @@ app.get("/profile", function(req, res) {
 })
 
 // SERVER SETUP
-var options = {
-   key: fs.readFileSync(__dirname +'/ssl/localhost.key'),
-  cert: fs.readFileSync(__dirname +'/ssl/localhost.crt')
-}
 
-var server = https.createServer(options, app);
+
+var server = http.createServer(app);
 server.listen(3005, function() {
   console.log('The app is now running on port 3005');
 })
