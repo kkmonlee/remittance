@@ -3,9 +3,15 @@ body {
 	color: white;
 }
 
+.three-images {
+	width: 5vw;
+}
 .send {
-	padding: 20vh 10vh;
-	text-align: center
+	padding: 25vh 10vh;
+	text-align: center;
+}
+.send h1 {
+	margin-bottom: 10vh;
 }
 
 .remit-shop-logo {
