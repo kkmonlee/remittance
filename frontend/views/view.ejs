@@ -1,0 +1,27 @@
+
+<%- include partials/head.ejs %>
+
+<%- include partials/navbar.ejs %>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<script>
+$(document).ready(function() {
+
+    $.ajax({
+        dataType: 'jsonp',
+        url: 'http://kkmonlee.com/africa/get_all_lists.php',
+    }).done(function(data) {
+        console.log(data);
+    })  
+
+});
+</script>
+<div>
+    <h1 class="view">View</h1>
+
+    <div class="flexContainer wholeList">
+    </div>
+
+</div>
+

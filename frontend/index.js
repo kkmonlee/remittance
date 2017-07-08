@@ -59,6 +59,10 @@ app.get('/recieve', function(req, res){
   res.render('recieve')
 })
 
+app.get('/view', function(req, res) {
+  res.render('view')
+})
+
 app.get("/profile", function(req, res) {
   var token = req.query.token;
   if (!token) {
