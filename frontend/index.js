@@ -115,11 +115,11 @@ server.listen(3005, function() {
   console.log('The app is now running on port 3005');
 })
 
-// app.get('/wishlist', function(req, res){
-//   // var wishlist = globalWishlist
-//   // globalWishlist = null
-//   res.render('wishlist')
-// })
+app.get('/wishlist', function(req, res){
+  // var wishlist = globalWishlist
+  // globalWishlist = null
+  res.render('wishlist')
+})
 
 app.get('/getuserwishlist/number/:number', function(req, res){
   console.log("pre redirect")
@@ -131,7 +131,7 @@ app.get('/getuserwishlist/number/:number', function(req, res){
       // res.render('view',{
       //   wishlist :JSON.parse(body)
       // });
-      res.send(body)
+      res.redirect(301,'http://localhost:3005/wishlist')
       // globalWishlist = body
       // res.redirect('wishlist')
     })

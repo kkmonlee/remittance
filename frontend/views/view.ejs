@@ -21,6 +21,10 @@ document.getElementById('submit').addEventListener('click', function(){
     var param = document.getElementById("addNumber").value
     $.ajax({
         url: '/getuserwishlist/number/'+ param
+    }).done(function(response){
+        console.log(response)
+         location.replace()
+        // $location.url(headers.Location)
     })
 })
 </script>
