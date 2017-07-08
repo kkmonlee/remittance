@@ -115,13 +115,19 @@ server.listen(3005, function() {
   console.log('The app is now running on port 3005');
 })
 app.get('/usernotfound', function(req, res){
-  res.render('userNotFound')
+  res.render('userNotFound', {
+    something : "hello"
+  })
 })
 
 app.get('/wishlist', function(req, res){
-  // var wishlist = globalWishlist
+  console.log("line 122", globalWishlist)
+  var wishlist = globalWishlist
   // globalWishlist = null
-  res.render('wishlist')
+  console.log("wishlist ", wishlist)
+  res.render('wishlist', {
+    wishlist: wishlist
+  })
 })
 
 app.get('/getuserwishlist/number/:number', function(req, res){
@@ -129,20 +135,15 @@ app.get('/getuserwishlist/number/:number', function(req, res){
   console.log('in getuserlist', req.params)
   request({
       uri: 'http://kkmonlee.com/africa/get_user_lists.php?american='+ req.params.number 
-    }, function(error, response, body){
-       console.log(response.statusCode)
-      //  response.statusCode === 404
-        console.log(body.length)
+    }, function(error, response, body){ 
+        console.log("boyd ", body)
+       globalWishlist = JSON.parse(body);
+       console.log("line 139", globalWishlist)
+       console.log("per redirect ", globalWishlist)
        if(response.statusCode === 404){
-         console.log('in 404')
          res.redirect(301, '/usernotfound')
        } else {
-         console.log("in not 404")
         res.redirect(301,'/wishlist')
-
        }
-
-      // globalWishlist = body
-      // res.redirect('wishlist')
     })
 })

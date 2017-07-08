@@ -2,7 +2,11 @@ body {
 	background-color: #18BC9C;
 	color: white;
 }
-
+.wishlist{
+	text-align: left;
+    padding-left: 42%;
+    font-size: 16px;
+}
 .three-images {
 	width: 5vw;
 }

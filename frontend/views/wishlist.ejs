@@ -3,4 +3,11 @@
 <%- include partials/navbar.ejs %>
 <div class="view">
     <h1> Wishlist </h1>
+    
+        <% entries = wishlist.map(function(elem) {
+            return '<div class="checkbox">'
+            + '<input type="checkbox" value="">' + elem.food + '</label>' +
+            '</div>';
+            }) %>
+            <div class="wishlist"><%- entries.join(" ") %></div>
 </div>
