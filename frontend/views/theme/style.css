@@ -55,9 +55,21 @@ body {
 	text-align: center;
 }
 
-.box2 {
+.flexContainer {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
+}
+
+.item {
+	width: 200px;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 8px;
+	color: black;
+}
+
+.buttonStyling {
+	color: black;
 }

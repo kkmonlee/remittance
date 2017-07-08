@@ -17,7 +17,6 @@ app.set('view engine', 'ejs');
 app.set(bodyparser.urlencoded({ extended: true }));
 app.set(bodyparser.json());
 app.use(express.static(__dirname + '/views/theme'))
-
 const userName = 'User name'
 
 
@@ -41,6 +40,16 @@ app.get("/userlist", function(req, res){
     // console.log(response.headers['content-type']) // 'image/png'
   })
 })
+
+app.get("/tryingLogin/phone/:phone/password/:password", function(req, res) {
+  res.send(req.params);
+  // request({
+  //   uri: 'http://kkmonlee.com/africa/login.php?phone=&password=',
+  // }).on('response', function(response) {
+  //   console.log(response);
+  // })
+})
+
 
 app.get('/login', function(req, res) {
   res.render('login')
