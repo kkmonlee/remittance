@@ -9,10 +9,12 @@
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-            while ($row = mysqli_fetch_assoc($result)) {
+        while ($row = mysqli_fetch_assoc($result)) {
             $response[] = $row;
         }
-    } else {
+    }
+
+    if (empty($response)) {
         http_response_code(404);
         die();
     }
