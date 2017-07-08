@@ -8,10 +8,16 @@
     $response = array();
     $result = mysqli_query($conn, $query);
 
-    while ($row = mysqli_fetch_assoc($result)) {
-        $response[] = $row;
+    if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+            $response[] = $row;
+        }
+    } else {
+        http_response_code(404);
+        die();
     }
 
+    
     header('Content-Type: application/json');
     echo json_encode($response);
 ?>
