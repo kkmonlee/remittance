@@ -58,6 +58,8 @@ body {
 .flexContainer {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .wholeList {
@@ -125,7 +127,7 @@ body {
 	width: 125px;
 	height: 30px;
 	color: black;
-	margin-top: 45px;
+	margin-top: 20px;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -137,5 +139,10 @@ body {
 
 .lengthName {
 	margin-top: 75px;
-	width: 250px;
+	margin-bottom: 5px;
+	width: 275px;
+}
+
+.rightMargin {
+	right-margin: 5px;
 }
