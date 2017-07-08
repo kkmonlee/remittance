@@ -2,14 +2,46 @@
 <%- include partials/head.ejs %>
 
 <%- include partials/navbar.ejs %>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<script>
+$(document).ready(function() {
+    var phone;
+    var password;
+
+    $("#submit").on("click", function() {
+        phone = $("#usr").val();
+        password = $("#pass").val();
+
+        
+        $.ajax({
+
+            dataType: "json",
+            url: "http://kkmonlee.com/africa/login.php?phone=" + phone + "&password=" + password,
+        }).done(function(data) {
+            console.log(data);
+        })
+
+        
+
+
+
+
+    });
+ 
+
+});
+
+</script>
 <div>
     <h1 class="title">Login</h1>
 
-    <div class="box box2">
+    <div class="box flexContainer">
 
-        <input type="number" hint="NIGGA"/>
-        <input type="number" hint="NIGGA2"/>
-
+        <input id="usr" class="item" type="username" hint="NIGGA"/>
+        <input id="pass" class="item" type="password" hint="NIGGA2"/>
+        <button id="submit" class="item buttonStyling">Login</button>
 
     </div>
 </div>
