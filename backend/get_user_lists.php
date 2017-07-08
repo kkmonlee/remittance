@@ -15,8 +15,8 @@
     }
 
     if (empty($response)) {
-        http_response_code(404);
-        die();
+        header("HTTP/1.0 404 Not Found");
+        //die();
     }
 
     
