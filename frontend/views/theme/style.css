@@ -97,8 +97,12 @@ body {
 .paymentSystem {
 	margin: auto;
 	width: 525px;
-	height: 350px;
+	height: 380px;
 	border-radius: 10px;
 	box-shadow: 2px 2px 10px #000000;
 	background-color: #EEE5FF;
+}
+
+.paymentPage {
+	color: black;
 }
