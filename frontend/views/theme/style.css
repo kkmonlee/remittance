@@ -58,8 +58,6 @@ body {
 .flexContainer {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-content: center;
 }
 
 .wholeList {
@@ -106,4 +104,38 @@ body {
 .paymentPage {
 	color: black;
 	text-align: center;
+}
+
+.flexHorizontal {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.separatingName {
+	margin-bottom: 50px;
+}
+
+.nameBox {
+	width: 150px;
+}
+
+.payButton {
+	width: 125px;
+	height: 30px;
+	color: black;
+	margin-top: 45px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.marginAuto {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.lengthName {
+	margin-top: 75px;
+	width: 250px;
 }
