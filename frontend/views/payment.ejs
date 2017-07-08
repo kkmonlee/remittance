@@ -6,12 +6,9 @@
 <script>
 $(document).ready(function() {
 
-    $.ajax({
-        dataType: 'jsonp',
-        url: 'http://kkmonlee.com/africa/get_all_lists.php',
-    }).done(function(data) {
-        console.log(data);
-    })  
+    $("#pay").on("click", function() {
+        window.open
+    })
 
 });
 </script>
@@ -38,7 +35,7 @@ $(document).ready(function() {
 	    	<input id="to" class="paymentPage" type="text"">
 
 
-	    <button class="payButton">Pay</button>
+	    <a href="/paymentsuccess"><button class="payButton">Pay</button></a>
     </div>
 
 </div>
