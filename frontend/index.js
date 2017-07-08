@@ -67,6 +67,11 @@ app.get('/view', function(req, res) {
     });
 });
 
+app.get('/paymentsuccess', function(req, res) {
+  res.render('paymentsuccess')
+})
+
+
 app.get('/payment', function(req, res) {
   res.render('payment')
 })
