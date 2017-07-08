@@ -62,6 +62,13 @@ body {
 	align-content: center;
 }
 
+.wholeList {
+	width: 90%;
+	height: 350px;
+	background-color: black;
+	margin: auto;
+}
+
 .item {
 	width: 200px;
 	margin-right: auto;
@@ -72,4 +79,11 @@ body {
 
 .buttonStyling {
 	color: black;
+}
+
+.view {
+	margin-top: 140px;
+	margin-bottom: 20px;
+	color: white;
+	text-align: center;
 }
