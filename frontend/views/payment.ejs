@@ -1,0 +1,42 @@
+<%- include partials/head.ejs %>
+
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<script>
+$(document).ready(function() {
+
+    $.ajax({
+        dataType: 'jsonp',
+        url: 'http://kkmonlee.com/africa/get_all_lists.php',
+    }).done(function(data) {
+        console.log(data);
+    })  
+
+});
+</script>
+<div>
+    <h1 class="payment">Payment Details</h1>
+
+    <div class="flexContainer paymentSystem">
+
+    	<label for="name" class="paymentPage">Name on card:</label>
+    	<input id="name" class="paymentPage" type="text">
+
+    	<label for="number" class="paymentPage">Card Number:</label>
+    	<input id="number" class="paymentPage" type="number">
+
+    	<label for="csc" class="paymentPage">CSC Code:</label>
+    	<input id="csc" class="paymentPage" type="number">
+
+    	<label for="from" class="paymentPage">Valid from:</label>
+    	<input id="from" class="paymentPage" type="number">
+
+    	<label for="to" class="paymentPage">Valid to:</label>
+    	<input id="to" class="paymentPage" type="number"">
+
+	    <button>Pay</button>
+    </div>
+
+</div>
+
