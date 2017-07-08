@@ -19,13 +19,16 @@
 <script>  
 document.getElementById('submit').addEventListener('click', function(){
     var param = document.getElementById("addNumber").value
-    $.ajax({
-        url: '/getuserwishlist/number/'+ param
-    }).done(function(response){
-        console.log(response)
-         location.replace()
-        // $location.url(headers.Location)
-    })
-})
+    var path = '/getuserwishlist/number/'+ param 
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            location.replace(this.responseURL)
+        }
+    };
+    xhttp.open("GET", path, true);
+    xhttp.send();
+});
 </script>
 
