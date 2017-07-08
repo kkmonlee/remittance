@@ -131,6 +131,7 @@ app.get('/getuserwishlist/number/:number', function(req, res){
       // res.render('view',{
       //   wishlist :JSON.parse(body)
       // });
+      res.send(body)
       // globalWishlist = body
       // res.redirect('wishlist')
     })
