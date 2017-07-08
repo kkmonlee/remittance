@@ -1,8 +1,19 @@
 body {
 	background-color: #18BC9C;
 	color: white;
+	
 }
 
+.jumbotron {
+	color: black;
+	margin: 0 10vw;
+	border-radius:40px;
+}
+.wishlist{
+	text-align: left;
+    padding-left: 42%;
+    font-size: 16px;
+}
 .three-images {
 	width: 5vw;
 }
