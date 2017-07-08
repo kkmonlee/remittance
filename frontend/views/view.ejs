@@ -5,23 +5,25 @@
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
-<script>
-$(document).ready(function() {
-
-    $.ajax({
-        dataType: 'jsonp',
-        url: 'http://kkmonlee.com/africa/get_all_lists.php',
-    }).done(function(data) {
-        console.log(data);
-    })  
-
-});
-</script>
 <div>
     <h1 class="view">View</h1>
-
-    <div class="flexContainer wholeList">
-    </div>
-
+        <p>Add your recipients order number</p> 
+        <input type="number" id="addNumber" name="addNumber" style="color:black"/>
+        <input type="submit" id="submit">    
 </div>
+<script>  
+document.getElementById('submit').addEventListener('click', function(){
+    var param = document.getElementById("addNumber").value
+    var path = '/getuserwishlist/number/'+ param 
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 ) {
+            location.replace(this.responseURL)
+        }
+    };
+    xhttp.open("GET", path, true);
+    xhttp.send();
+});
+</script>
 

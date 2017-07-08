@@ -7,10 +7,12 @@ const request = require('request');
 
 var app = express()
 
+
+
 // yoti config
 var sdkid = process.env.YOTI_CLIENT_SDK_ID;
 var appid = process.env.APPLICATION_ID;
-
+var globalWishlist;
 // App config
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -32,6 +34,8 @@ app.get("/send", function(req, res){
   res.render('send')
 })
 
+
+
 app.get("/userlist", function(req, res){
       request({
       uri: 'http://kkmonlee.com/africa/get_user_lists.php?american=447767797808',
@@ -41,14 +45,6 @@ app.get("/userlist", function(req, res){
   })
 })
 
-app.get("/tryingLogin/phone/:phone/password/:password", function(req, res) {
-  res.send(req.params);
-  // request({
-  //   uri: 'http://kkmonlee.com/africa/login.php?phone=&password=',
-  // }).on('response', function(response) {
-  //   console.log(response);
-  // })
-})
 
 
 app.get('/login', function(req, res) {
@@ -60,7 +56,19 @@ app.get('/recieve', function(req, res){
 })
 
 app.get('/view', function(req, res) {
-  res.render('view')
+    request({
+      uri: 'http://kkmonlee.com/africa/get_all_lists.php',
+    }, function(error, response, body){
+      // console.log("data :", body)
+
+      res.render('view',{
+        wishlist :JSON.parse(body)
+      });
+    });
+});
+
+app.get('/payment', function(req, res) {
+  res.render('payment')
 })
 
 app.get("/profile", function(req, res) {
@@ -71,6 +79,7 @@ app.get("/profile", function(req, res) {
       message: 'No token provided!'
     })
   }
+
 
  yotiClient.getActivityDetails(token)
     .then(function(profile) {
@@ -109,4 +118,36 @@ var server = http.createServer(app);
 server.listen(3005, function() {
   console.log('The app is now running on port 3005');
 })
+app.get('/usernotfound', function(req, res){
+  res.render('userNotFound', {
+    something : "hello"
+  })
+})
 
+app.get('/wishlist', function(req, res){
+  console.log("line 122", globalWishlist)
+  var wishlist = globalWishlist
+  // globalWishlist = null
+  console.log("wishlist ", wishlist)
+  res.render('wishlist', {
+    wishlist: wishlist
+  })
+})
+
+app.get('/getuserwishlist/number/:number', function(req, res){
+  console.log("pre redirect")
+  console.log('in getuserlist', req.params)
+  request({
+      uri: 'http://kkmonlee.com/africa/get_user_lists.php?american='+ req.params.number 
+    }, function(error, response, body){ 
+        console.log("boyd ", body)
+       globalWishlist = JSON.parse(body);
+       console.log("line 139", globalWishlist)
+       console.log("per redirect ", globalWishlist)
+       if(response.statusCode === 404){
+         res.redirect(301, '/usernotfound')
+       } else {
+        res.redirect(301,'/wishlist')
+       }
+    })
+})

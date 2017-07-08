@@ -1,8 +1,19 @@
 body {
 	background-color: #18BC9C;
 	color: white;
+	
 }
 
+.jumbotron {
+	color: black;
+	margin: 0 10vw;
+	border-radius:40px;
+}
+.wishlist{
+	text-align: left;
+    padding-left: 42%;
+    font-size: 16px;
+}
 .three-images {
 	width: 5vw;
 }
@@ -58,8 +69,6 @@ body {
 .flexContainer {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-content: center;
 }
 
 .wholeList {
@@ -86,4 +95,58 @@ body {
 	margin-bottom: 20px;
 	color: white;
 	text-align: center;
+}
+
+.payment {
+	margin-top: 45px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.paymentSystem {
+	margin: auto;
+	width: 525px;
+	height: 380px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 10px #000000;
+	background-color: #EEE5FF;
+}
+
+.paymentPage {
+	color: black;
+	text-align: center;
+}
+
+.flexHorizontal {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.separatingName {
+	margin-bottom: 50px;
+}
+
+.nameBox {
+	width: 150px;
+}
+
+.payButton {
+	width: 125px;
+	height: 30px;
+	color: black;
+	margin-top: 45px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.marginAuto {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.lengthName {
+	margin-top: 75px;
+	width: 250px;
 }

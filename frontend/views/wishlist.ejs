@@ -1,0 +1,25 @@
+<%- include partials/head.ejs %>
+
+<%- include partials/navbar.ejs %>
+<div class="view text-dark">
+    <h1> Wishlist </h1>
+
+    <div class="jumbotron">
+        <p class="lead">Choose the shopping list you want to pay for.</p>
+        <hr class="my-4">
+        
+        <% entries = wishlist.map(function(elem) {
+            return '<div class="checkbox">'
+            + '<input type="checkbox" value="">' + elem.food + '</label>' +
+            '</div>';
+            }) %>
+            <div class="wishlist"><%- entries.join(" ") %></div>
+        <hr class="my-4">
+        <p>Total : <span>$70</span></p>
+       
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Pay for items</a>
+        </p>
+    </div>
+    
+</div>
