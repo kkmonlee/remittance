@@ -68,6 +68,12 @@ app.get('/view', function(req, res) {
 });
 
 app.get('/paymentsuccess', function(req, res) {
+  console.log("in /paymentsuceccess")
+  request({
+    uri : 'http://kkmonlee.com/africa/paid.php'
+  }, function(error, body, response){
+    console.log("api response", response)
+  })
   res.render('paymentsuccess')
 })
 
@@ -130,25 +136,17 @@ app.get('/usernotfound', function(req, res){
 })
 
 app.get('/wishlist', function(req, res){
-  console.log("line 122", globalWishlist)
   var wishlist = globalWishlist
-  // globalWishlist = null
-  console.log("wishlist ", wishlist)
   res.render('wishlist', {
     wishlist: wishlist
   })
 })
 
 app.get('/getuserwishlist/number/:number', function(req, res){
-  console.log("pre redirect")
-  console.log('in getuserlist', req.params)
   request({
       uri: 'http://kkmonlee.com/africa/get_user_lists.php?american='+ req.params.number 
     }, function(error, response, body){ 
-        console.log("boyd ", body)
        globalWishlist = JSON.parse(body);
-       console.log("line 139", globalWishlist)
-       console.log("per redirect ", globalWishlist)
        if(response.statusCode === 404){
          res.redirect(301, '/usernotfound')
        } else {
