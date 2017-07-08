@@ -8,10 +8,18 @@
     $response = array();
     $result = mysqli_query($conn, $query);
 
-    while ($row = mysqli_fetch_assoc($result)) {
-        $response[] = $row;
+    if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $response[] = $row;
+        }
     }
 
+    if (empty($response)) {
+        header("HTTP/1.0 404 Not Found");
+        //die();
+    }
+
+    
     header('Content-Type: application/json');
     echo json_encode($response);
 ?>
