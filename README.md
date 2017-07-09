@@ -2,7 +2,7 @@
 
 ## About
 This crazy product was created, developed and tested within 36 hours of idea birth! Our team (see authors) consisted of three developers and two financial and business geeks,
-who met during the ` [African Tech Day Hackathon 2017.](https://www.africatechday.co.uk/) `
+who met during the [`African Tech Day Hackathon 2017.`](https://www.africatechday.co.uk/)
 
 ## Basic Scenario
 1. Someone you know in the African continent, uses our service and sends a text to our central server, using our predefined layout.
