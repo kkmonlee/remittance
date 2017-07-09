@@ -1,5 +1,5 @@
 # RemitShop - Remmitance Shopping made easy
 
-![title](/media/title.jpg)[remitshop.site]
+![title](/media/title.png)[remitshop.site]
 
 
