@@ -1,1 +1,5 @@
-# African Tech Day 2017
+# RemitShop - Remmitance Shopping made easy
+
+(/media/title.jpg)[remitshop.site]
+
+
