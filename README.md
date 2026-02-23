@@ -16,7 +16,7 @@ who met during the [`African Tech Day Hackathon 2017.`](https://www.africatechda
 
 ### Authors
 #### Developers:
-- [Atul Anand](http://www.github.com/kkmonlee)
+- [XXXX XXXXX](#)
 - [Rachel Black](http://www.github.com/rachblondon)
 - [Leon Boehmer](http://www.github.com/mortuie)
 #### Business & Finance:
